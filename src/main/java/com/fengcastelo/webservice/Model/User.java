@@ -7,7 +7,7 @@ import java.io.Serial;
 import java.io.Serializable;
 import java.util.Objects;
 
-@Document(collection = "user")
+@Document(collection="user")
 public class User implements Serializable {
 
     @Serial
