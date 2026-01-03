@@ -4,6 +4,7 @@ import com.fengcastelo.webservice.Model.User;
 import com.fengcastelo.webservice.Repositories.UserRepository;
 
 import com.fengcastelo.webservice.Services.exception.ObjectNotFoundException;
+import com.fengcastelo.webservice.dto.UserDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -23,5 +24,13 @@ public class UserService {
     public User findById(String id) {
         Optional<User> obj = repository.findById(id);
         return obj.orElseThrow(() -> new ObjectNotFoundException("Object Not Found"));
+    }
+
+    public User insert(User obj) {
+        return repository.save(obj);
+    }
+
+    public User fromDTO(UserDTO objDto) {
+        return new User(objDto.getId(), objDto.getName(), objDto.getEmail());
     }
 }
