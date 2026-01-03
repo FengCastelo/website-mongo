@@ -1,6 +1,6 @@
-package com.fengcastelo.webservice.Resources.exception;
+package com.fengcastelo.webservice.Resources.exceptions;
 
-import com.fengcastelo.webservice.Services.exception.ObjectNotFoundException;
+import com.fengcastelo.webservice.Services.exceptions.ObjectNotFoundException;
 import jakarta.servlet.http.HttpServletRequest;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

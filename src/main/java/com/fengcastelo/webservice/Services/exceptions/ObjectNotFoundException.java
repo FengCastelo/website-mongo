@@ -1,4 +1,4 @@
-package com.fengcastelo.webservice.Services.exception;
+package com.fengcastelo.webservice.Services.exceptions;
 
 public class ObjectNotFoundException extends RuntimeException {
 

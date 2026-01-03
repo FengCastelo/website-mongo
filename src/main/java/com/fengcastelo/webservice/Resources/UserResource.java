@@ -2,7 +2,7 @@ package com.fengcastelo.webservice.Resources;
 
 import com.fengcastelo.webservice.Model.User;
 import com.fengcastelo.webservice.Services.UserService;
-import com.fengcastelo.webservice.dto.UserDTO;
+import com.fengcastelo.webservice.dtos.UserDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -37,5 +37,11 @@ public class UserResource {
         obj = service.insert(obj);
         URI uri = ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}").buildAndExpand(obj.getId()).toUri();
         return ResponseEntity.created(uri).build();
+    }
+
+    @DeleteMapping(value = "/{id}")
+    public ResponseEntity<Void> delete(@PathVariable String id) {
+        service.deleteById(id);
+        return ResponseEntity.noContent().build();
     }
 }

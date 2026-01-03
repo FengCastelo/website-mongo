@@ -1,4 +1,4 @@
-package com.fengcastelo.webservice.dto;
+package com.fengcastelo.webservice.dtos;
 
 import com.fengcastelo.webservice.Model.User;
 

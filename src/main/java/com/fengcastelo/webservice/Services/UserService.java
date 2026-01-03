@@ -3,8 +3,8 @@ package com.fengcastelo.webservice.Services;
 import com.fengcastelo.webservice.Model.User;
 import com.fengcastelo.webservice.Repositories.UserRepository;
 
-import com.fengcastelo.webservice.Services.exception.ObjectNotFoundException;
-import com.fengcastelo.webservice.dto.UserDTO;
+import com.fengcastelo.webservice.Services.exceptions.ObjectNotFoundException;
+import com.fengcastelo.webservice.dtos.UserDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -32,5 +32,9 @@ public class UserService {
 
     public User fromDTO(UserDTO objDto) {
         return new User(objDto.getId(), objDto.getName(), objDto.getEmail());
+    }
+
+    public void deleteById(String id) {
+        repository.deleteById(id);
     }
 }
