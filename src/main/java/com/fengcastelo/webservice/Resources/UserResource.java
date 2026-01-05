@@ -1,5 +1,6 @@
 package com.fengcastelo.webservice.Resources;
 
+import com.fengcastelo.webservice.Model.Post;
 import com.fengcastelo.webservice.Model.User;
 import com.fengcastelo.webservice.Services.UserService;
 import com.fengcastelo.webservice.dtos.UserDTO;
@@ -29,6 +30,12 @@ public class UserResource {
     public ResponseEntity<UserDTO> findById(@PathVariable String id) {
         User obj = service.findById(id);
         return ResponseEntity.ok().body(new UserDTO(obj));
+    }
+
+    @GetMapping(value = "/{id}/posts")
+    public ResponseEntity<List<Post>> findPosts(@PathVariable String id) {
+        User obj = service.findById(id);
+        return ResponseEntity.ok().body(obj.getPosts());
     }
 
     @PostMapping
